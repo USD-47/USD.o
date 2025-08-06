@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>USD online (USD.o) — White Paper</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Tailwind CSS CDN for a sleek, modern design -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Inter font for premium look -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0D121B; /* Dark, professional background */
+      color: #e2e8f0;
+      line-height: 1.7;
+    }
+    h1, h2, h3 {
+      color: #f1f5f9;
+      font-weight: 700;
+    }
+    h1 { font-weight: 800; }
+    h2 { font-weight: 700; }
+    pre, code {
+      background: #1A202E !important; /* Slightly lighter than body for contrast */
+      color: #f1f5f9 !important;
+      border-radius: 0.75rem;
+      padding: 1.25em 1.5em;
+      font-size: 0.9em;
+      line-height: 1.6;
+      overflow-x: auto;
+      font-family: "Fira Mono", "Consolas", monospace;
+      border: 1px solid #232a3e;
+    }
+    .section {
+      margin-bottom: 3.5rem;
+    }
+    .gradient-header {
+      background: linear-gradient(90deg, #38bdf8 0%, #818cf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .glass {
+      background: rgba(20, 26, 38, 0.9); /* More pronounced glass effect */
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(49, 58, 80, 0.5);
+      border-radius: 1.5rem;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+      padding: 2.5rem;
+      margin-bottom: 2.5rem;
+      transition: all 0.3s ease;
+    }
+    .glass:hover {
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+      transform: translateY(-2px);
+    }
+    .logo-img {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background: #161c27;
+      border: 3px solid #60a5fa;
+      box-shadow: 0 4px 20px #0ea5e9aa;
+    }
+    table {
+      background: #1A202E;
+      color: #e2e8f0;
+      border-radius: 1rem;
+      width: 100%;
+      overflow-x: auto;
+      margin-bottom: 1em;
+      font-size: 0.98em;
+      border-collapse: separate;
+      border-spacing: 0;
+    }
+    th, td {
+      padding: 1em 1.5em;
+      text-align: left;
+    }
+    th {
+      background: #232a3e;
+      color: #93c5fd;
+      font-weight: 600;
+    }
+    tr {
+      border-bottom: 1px solid #334155;
+    }
+    tr:last-child {
+      border-bottom: none;
+    }
+    a {
+      color: #60a5fa;
+      text-decoration: underline;
+      transition: color 0.2s;
+    }
+    a:hover {
+      color: #38bdf8;
+    }
+    hr {
+      border-top: 1px solid #334155;
+      margin: 2.5rem 0;
+    }
+    .pill {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .pill.complete { background-color: #22c55e30; color: #4ade80; }
+    .pill.inprogress { background-color: #f59e0b30; color: #facc15; }
+    .pill.upcoming { background-color: #3b82f630; color: #60a5fa; }
+  </style>
+</head>
+<body class="min-h-screen pb-12">
+
+  <!-- Header -->
+  <header class="flex flex-col md:flex-row items-center justify-between gap-6 p-8 md:p-12">
+    <div class="flex items-center gap-5">
+      <img src="https://cryptologos.cc/logos/usd-coin-usdc-logo.png?v=030" alt="USD.o Logo" class="logo-img">
+      <div>
+        <h1 class="text-4xl md:text-5xl font-extrabold gradient-header tracking-tight">USD online (USD.o)</h1>
+        <div class="text-lg md:text-xl font-medium text-slate-400">— Official White Paper —</div>
+      </div>
+    </div>
+    <div class="mt-4 md:mt-0 text-right">
+      <div class="font-bold text-cyan-400 text-xl md:text-2xl">The Future of Digital Dollar Stability</div>
+      <div class="text-sm text-slate-500 mt-1">v2.0 | August 2025</div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 md:px-8">
+
+    <!-- Executive Summary -->
+    <section class="section glass">
+      <h2 class="text-3xl font-bold mb-4">1. Executive Summary</h2>
+      <p>
+        <b>USD online (USD.o)</b> is a new generation, centralized stablecoin designed for global payments, digital finance, and decentralized finance (DeFi) ecosystems. Deployed as a BEP20-compatible token on the BNB Smart Chain (BSC), USD.o combines the highest standards of security, transparency, and operational simplicity. With a strictly owner-controlled minting mechanism and a 1:1 peg to the US Dollar, USD.o aims to become the reference digital dollar for institutional and retail users worldwide.
+      </p>
+    </section>
+
+    <!-- Problem Statement -->
+    <section class="section glass">
+      <h2 class="text-3xl font-bold mb-4">2. Problem Statement</h2>
+      <h3 class="text-xl font-semibold mb-2">2.1. The Need for a Trusted Digital Dollar</h3>
+      <ul class="list-disc pl-5 mb-3 text-slate-300">
+        <li>A growing demand for reliable, transparent, and auditable digital dollar instruments.</li>
+        <li>A lack of on-chain transparency and sufficient reserve proof from existing solutions.</li>
+        <li>Guaranteed stability without the risks of algorithmic or over-collateralized models.</li>
+        <li>A simple solution for fast and low-cost cross-border payments.</li>
+      </ul>
+      <h3 class="text-xl font-semibold mb-2">2.2. Key Challenges with Existing Solutions</h3>
+      <ul class="list-disc pl-5 text-slate-300">
+        <li><b>Algorithmic stablecoins</b> have suffered collapses due to market dynamics.</li>
+        <li><b>Over-collateralized models</b> lock up excess capital and complicate user experience.</li>
+        <li><b>Some centralized stablecoins</b> lack transparency in their mint/burn and reserve practices.</li>
+        <li><b>High KYC and onboarding complexity</b> makes access difficult.</li>
+      </ul>
+    </section>
+
+    <!-- Solution -->
+    <section class="section glass">
+      <h2 class="text-3xl font-bold mb-4">3. The USD online (USD.o) Solution</h2>
+      <h3 class="text-xl font-semibold mb-2">3.1. Core Philosophy</h3>
+      <ul class="list-disc pl-5 mb-3 text-slate-300">
+        <li>All tokens are minted exclusively by the contract owner, always against real USD received off-chain.</li>
+        <li>There is no algorithmic stabilization, no collateral management, and no synthetic risk.</li>
+        <li>Every operation (mint, transfer) is on-chain, public, and audit-friendly.</li>
+      </ul>
+      <h3 class="text-xl font-semibold mb-2">3.2. Token Details</h3>
+      <table>
+        <thead>
+          <tr><th>Parameter</th><th>Value</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Token Name</td><td>USD online</td></tr>
+          <tr><td>Symbol</td><td>USD.o</td></tr>
+          <tr><td>Decimals</td><td>6</td></tr>
+          <tr><td>Standard</td><td>ERC20 / BEP20</td></tr>
+          <tr><td>Chain</td><td>BNB Smart Chain (BSC)</td></tr>
+          <tr><td>Contract Address</td><td>[To be deployed]</td></tr>
+          <tr><td>Minting Mechanism</td><td>Owner only (the official issuer)</td></tr>
+          <tr><td>Burning Mechanism</td><td>Owner only (the official issuer)</td></tr>
+          <tr><td>Total Supply</td><td>Dynamic (controlled only by owner)</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Technical Architecture -->
+    <section class="section glass">
+      <h2 class="text-3xl font-bold mb-4">4. Technical Architecture</h2>
+      <h3 class="text-xl font-semibold mb-2">4.1. Smart Contract Overview</h3>
+      <p class="mb-4 text-slate-300">
+        USD.o is implemented as a minimalistic, gas-optimized ERC20 token with minting privileges strictly restricted to the owner address. There is no public minting or burning; it contains no hidden functions.
+      </p>
+      <ul class="list-disc pl-5 mb-4 text-slate-300">
+        <li><b>mint(address to, uint256 amount):</b> Only the owner can mint. The function is tied to the circulation of new tokens and the receipt of corresponding USD into the treasury.</li>
+        <li><b>burn(uint256 amount):</b> Only the owner can burn. This function is tied to withdrawing tokens from circulation and returning the corresponding USD to users.</li>
+        <li><b>transfer(address to, uint256 amount):</b> Standard ERC20 transfer function.</li>
+        <li><b>transferFrom(address from, address to, uint256 amount):</b> Allowance transfer function.</li>
+      </ul>
+      <p class="mb-2 font-semibold text-slate-200">Contract Code Snippet:</p>
+      <pre><code>// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.24;
+
+contract USDO {
+    string public name = "USD online";
+    string public symbol = "USD.o";
+    uint8 public decimals = 6;
+    uint256 public totalSupply;
+    address public owner;
+    mapping(address => uint256) public balanceOf;
+    mapping(address => mapping(address => uint256)) public allowance;
+    
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Only owner can call this function");
+        _;
+    }
+    
+    event Transfer(address indexed from, address indexed to, uint256 value);
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+    event Mint(address indexed to, uint256 amount);
+    event Burn(address indexed from, uint256 amount);
+    
+    constructor() {
+        owner = msg.sender;
+    }
+    
+    function mint(address to, uint256 amount) external onlyOwner {
+        require(to != address(0), "Cannot mint to zero address");
+        balanceOf[to] += amount;
+        totalSupply += amount;
+        emit Mint(to, amount);
+        emit Transfer(address(0), to, amount);
+    }
+    
+    function burn(uint256 amount) external onlyOwner {
+        require(balanceOf[msg.sender] >= amount, "Insufficient balance to burn");
+        balanceOf[msg.sender] -= amount;
+        totalSupply -= amount;
+        emit Burn(msg.sender, amount);
+        emit Transfer(msg.sender, address(0), amount);
+    }
+    
+    function transfer(address to, uint256 amount) external returns (bool) {
+        require(balanceOf[msg.sender] >= amount, "Insufficient balance");
+        require(to != address(0), "Cannot transfer to zero address");
+        balanceOf[msg.sender] -= amount;
+        balanceOf[to] += amount;
+        emit Transfer(msg.sender, to, amount);
+        return true;
+    }
+    
+    function approve(address spender, uint256 amount) external returns (bool) {
+        require(spender != address(0), "Cannot approve to zero address");
+        allowance[msg.sender][spender] = amount;
+        emit Approval(msg.sender, spender, amount);
+        return true;
+    }
+    
+    function transferFrom(address from, address to, uint256 amount) external returns (bool) {
+        require(balanceOf[from] >= amount, "Insufficient balance");
+        require(allowance[from][msg.sender] >= amount, "Allowance exceeded");
+        require(to != address(0), "Cannot transfer to zero address");
+        balanceOf[from] -= amount;
+        balanceOf[to] += amount;
+        allowance[from][msg.sender] -= amount;
+        emit Transfer(from, to, amount);
+        return true;
+    }
+}
+</code></pre>
+      <h3 class="text-xl font-semibold mb-2">4.2. Security and Auditability</h3>
+      <ul class="list-disc pl-5 text-slate-300">
+        <li><b>Open Source Codebase:</b> The code is 100% open-source and publicly auditable.</li>
+        <li><b>Independent Audits:</b> Audits will be conducted by leading blockchain security firms (CertiK, Hacken, etc.).</li>
+        <li><b>No External Dependencies:</b> No third-party contracts, oracles, or algorithmic code are used.</li>
+        <li><b>Immutable Ownership:</b> The owner role is set upon deployment and cannot be changed.</li>
+      </ul>
+      <h3 class="text-xl font-semibold mb-2">4.3. On-chain and Off-chain Proof of Reserves</h3>
+      <p class="mb-2 text-slate-300">
+        To maximize transparency, the total supply of USD.o (on-chain) will be periodically matched with a proof of reserve (off-chain) provided by a verified, independent auditor. This will provide public assurance that every token is backed 1:1 by real fiat USD.
+      </p>
+    </section>
+
+    <!-- Tokenomics -->
+    <section class="section glass">
+      <h2 class="text-3xl font-bold mb-4">5. Tokenomics</h2>
+      <p class="mb-4 text-slate-300">
+        USD.o's tokenomics are built on a foundation of stability and transparency. The token's value is pegged to the US Dollar, and the supply is dynamically adjusted according to market demand.
+      </p>
+      <ul class="list-disc pl-5 mb-3 text-slate-300">
+        <li><b>Fixed Price:</b> 1 USD.o = 1 USD.</li>
+        <li><b>Dynamic Supply:</b> New tokens are minted only when new fiat currency reserves are received. Tokens that are taken out of circulation are burned.</li>
+        <li><b>Transaction Fees:</b> No additional transaction fees are applied for USD.o transfers, other than the network gas fee.</li>
+      </ul>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="section glass">
+      <h2 class="text-3xl font-bold mb-4">6. Use Cases</h2>
+      <ul class="list-disc pl-5 text-slate-300">
+        <li><b>Digital Payments:</b> Global P2P and merchant payments. Fast, cheap, and reliable settlement with zero volatility.</li>
+        <li><b>DeFi Integration:</b> Seamless integration into decentralized exchanges (DEXs), lending platforms, and yield protocols.</li>
+        <li><b>Institutional & OTC:</b> Bulk stablecoin minting/burning for verified institutional clients. B2B treasury, payroll, and accounting settlements.</li>
+        <li><b>Remittances:</b> Borderless remittance channels with 24/7 availability. No correspondent banking delays.</li>
+      </ul>
+    </section>
+
+    <!-- Roadmap -->
+    <section class="section glass">
+      <h2 class="text-3xl font-bold mb-4">7. Roadmap</h2>
+      <table>
+        <thead>
+          <tr><th>Phase</th><th>Milestone Description</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Phase 1 (Q3 2025)</td><td>Contract development & internal audit</td><td><span class="pill complete">Complete</span></td></tr>
+          <tr><td>Phase 2 (Q3 2025)</td><td>Mainnet deployment on BSC</td><td><span class="pill inprogress">In Progress</span></td></tr>
+          <tr><td>Phase 3 (Q4 2025)</td><td>Public audit by CertiK/Hacken</td><td><span class="pill upcoming">Upcoming</span></td></tr>
+          <tr><td>Phase 4 (Q4 2025)</td><td>DEX/CEX listings, liquidity partnerships</td><td><span class="pill upcoming">Upcoming</span></td></tr>
+          <tr><td>Phase 5 (Q4 2025)</td><td>Cross-chain bridge to Ethereum & others</td><td><span class="pill upcoming">Upcoming</span></td></tr>
+          <tr><td>Phase 6 (Q1 2026)</td><td>Institutional integrations & B2B APIs</td><td><span class="pill upcoming">Upcoming</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+    
+    <!-- Compliance -->
+    <section class="section glass">
+      <h2 class="text-3xl font-bold mb-4">8. Regulatory Compliance</h2>
+      <p class="text-slate-300">USD.o commits to full compliance with all relevant international and local regulations.</p>
+      <ul class="list-disc pl-5 text-slate-300 mt-2">
+        <li>AML/CFT (Anti-Money Laundering / Countering Financing of Terrorism)</li>
+        <li>KYC (Know Your Customer) standards</li>
+        <li>Cooperation with regulatory and law enforcement authorities as required</li>
+        <li>Transparent reporting and audit trails</li>
+      </ul>
+    </section>
+
+    <!-- Team & Governance -->
+    <section class="section glass">
+      <h2 class="text-3xl font-bold mb-4">9. Team & Governance</h2>
+      <ul class="list-disc pl-5 mb-3 text-slate-300">
+        <li><b>Team:</b> A core team of smart contract developers, compliance, finance, and operations professionals.</li>
+        <li><b>Ownership:</b> A single owner-controlled minting mechanism for maximum security and accountability.</li>
+        <li><b>Governance:</b> Future plans include a DAO (Decentralized Autonomous Organization)-based advisory committee for transparency and community feedback.</li>
+      </ul>
+    </section>
+
+    <!-- Disclaimer -->
+    <section class="section glass">
+      <h2 class="text-3xl font-bold mb-4">10. Disclaimer</h2>
+      <p class="text-slate-300">
+        USD.o is a centralized stablecoin. Only the official issuer can mint tokens, and each minted token is intended to be backed 1:1 by fiat USD. Users are advised to verify the contract address and the legitimacy of the issuer before interacting with or exchanging any funds. This white paper is not an investment recommendation.
+      </p>
+    </section>
+
+  </main>
+
+</body>
+</html>
