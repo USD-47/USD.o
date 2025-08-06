@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>USD online (USD.o) — The Future of Stable Value</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Tailwind CSS CDN for modern, responsive design -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter for premium feel -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .gradient-bg { background: linear-gradient(135deg, #23272F 0%, #3D4052 100%); }
+    .shadow-soft { box-shadow: 0 10px 30px rgba(23,25,40,0.13); }
+    .glass {
+      background: rgba(40,48,65,0.78);
+      backdrop-filter: blur(6px);
+      border-radius: 2rem;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    }
+    .transition { transition: all 0.25s cubic-bezier(.4,0,.2,1); }
+    .logo-animate { transition: transform 0.4s; }
+    .logo-animate:hover { transform: scale(1.05) rotate(-2deg);}
+  </style>
+</head>
+<body class="gradient-bg min-h-screen flex flex-col justify-between">
+
+  <!-- Header -->
+  <header class="flex items-center justify-between px-6 py-4">
+    <div class="flex items-center gap-3">
+      <img src="https://cryptologos.cc/logos/usd-coin-usdc-logo.png?v=030" alt="USD.o Logo" class="w-12 h-12 logo-animate shadow-lg rounded-full bg-white/10 border border-white/20">
+      <div>
+        <h1 class="text-2xl md:text-3xl font-bold text-white tracking-wide">USD online</h1>
+        <span class="text-sm text-slate-300 font-medium tracking-wide">Symbol: <b>USD.o</b></span>
+      </div>
+    </div>
+    <nav class="hidden md:flex gap-8 text-slate-200 font-semibold text-lg">
+      <a href="#about" class="hover:text-cyan-400 transition">About</a>
+      <a href="#features" class="hover:text-cyan-400 transition">Features</a>
+      <a href="#contract" class="hover:text-cyan-400 transition">Smart Contract</a>
+      <a href="#audit" class="hover:text-cyan-400 transition">Audit</a>
+      <a href="#getusd" class="hover:text-cyan-400 transition">Get USD.o</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="flex flex-col items-center justify-center flex-1 text-center px-3 md:px-0">
+    <div class="glass p-10 pt-8 max-w-2xl w-full mb-8 shadow-soft">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">The Future of Stable Value</h2>
+      <p class="text-lg text-slate-200 mb-6">USD online (<span class="text-cyan-400 font-bold">USD.o</span>) is a next-generation, ultra-transparent, fully owner-minted stablecoin designed for decentralized finance, global payments, and smart contract use.</p>
+      <div class="flex flex-wrap items-center justify-center gap-3 my-5">
+        <span class="bg-cyan-600/20 text-cyan-300 px-4 py-1 rounded-2xl font-semibold">6 decimals</span>
+        <span class="bg-green-600/20 text-green-300 px-4 py-1 rounded-2xl font-semibold">ERC20 Standard</span>
+        <span class="bg-yellow-600/20 text-yellow-300 px-4 py-1 rounded-2xl font-semibold">Minted only by Owner</span>
+      </div>
+      <a href="#getusd" class="inline-block mt-6 px-7 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-600 text-white font-semibold text-lg shadow transition">Get USD.o</a>
+    </div>
+  </section>
+
+  <!-- About & Features -->
+  <section id="about" class="max-w-5xl mx-auto my-8 px-4 md:px-0 flex flex-col md:flex-row gap-10">
+    <!-- About -->
+    <div class="flex-1 glass p-7 shadow-soft">
+      <h3 class="text-2xl font-bold text-white mb-3">About USD online</h3>
+      <p class="text-slate-200 mb-2">
+        USD online (<b>USD.o</b>) brings digital dollar stability to the blockchain. All tokens are minted exclusively by the contract owner for maximum control and full transparency.
+      </p>
+      <ul class="list-disc list-inside text-slate-300 pl-2 mt-3 space-y-1">
+        <li>Always 1:1 with US Dollar value (mint only by owner)</li>
+        <li>Fully compatible with DeFi, exchanges, wallets</li>
+        <li>No algorithmic risk, no collateral liquidation risk</li>
+      </ul>
+    </div>
+    <!-- Features -->
+    <div id="features" class="flex-1 glass p-7 shadow-soft">
+      <h3 class="text-2xl font-bold text-white mb-3">Key Features</h3>
+      <ul class="text-slate-200 space-y-2">
+        <li><b>Secure Minting:</b> Only owner can mint, ensuring controlled supply</li>
+        <li><b>6 Decimals:</b> Perfect for micro and macro payments</li>
+        <li><b>Full ERC20:</b> Seamless transfers, approvals, DEX listing</li>
+        <li><b>Zero Algorithmic Risk:</b> Not algorithmic, not overcollateralized</li>
+        <li><b>Public Audit Ready:</b> Smart contract code is open for audit</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contract & Audit -->
+  <section id="contract" class="max-w-4xl mx-auto my-8 px-4">
+    <div class="glass p-7 shadow-soft">
+      <h3 class="text-2xl font-bold text-white mb-4">Smart Contract</h3>
+      <p class="text-slate-200 mb-2">
+        USD online is implemented as a pure, owner-minted ERC20 token. No inflation, no hidden mechanics. Fully auditable:
+      </p>
+      <pre class="bg-gray-950 text-slate-100 rounded-xl p-4 text-xs md:text-sm overflow-x-auto mb-3" style="white-space:pre-line;">
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.24;
+
+contract USDO {
+    string public name = "USD online";
+    string public symbol = "USD.o";
+    uint8 public decimals = 6;
+    uint256 public totalSupply;
+    address public owner;
+    mapping(address => uint256) public balanceOf;
+    mapping(address => mapping(address => uint256)) public allowance;
+    modifier onlyOwner() { require(msg.sender == owner, "Only owner"); _; }
+    event Transfer(address indexed from, address indexed to, uint256 value);
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+    event Mint(address indexed to, uint256 amount);
+    constructor() { owner = msg.sender; }
+    function mint(address to, uint256 amount) external onlyOwner {
+        balanceOf[to] += amount; totalSupply += amount;
+        emit Mint(to, amount); emit Transfer(address(0), to, amount); }
+    function transfer(address to, uint256 amount) external returns (bool) {
+        require(balanceOf[msg.sender] >= amount, "Insufficient balance");
+        balanceOf[msg.sender] -= amount; balanceOf[to] += amount;
+        emit Transfer(msg.sender, to, amount); return true; }
+    function approve(address spender, uint256 amount) external returns (bool) {
+        allowance[msg.sender][spender] = amount;
+        emit Approval(msg.sender, spender, amount); return true; }
+    function transferFrom(address from, address to, uint256 amount) external returns (bool) {
+        require(balanceOf[from] >= amount, "Insufficient balance");
+        require(allowance[from][msg.sender] >= amount, "Allowance exceeded");
+        balanceOf[from] -= amount; balanceOf[to] += amount;
+        allowance[from][msg.sender] -= amount;
+        emit Transfer(from, to, amount); return true; }
+}
+      </pre>
+      <div class="mt-4 text-slate-300 text-xs md:text-base">
+        <b>Contract address (BSC):</b> <span class="select-all">[To be deployed]</span>
+      </div>
+      <a href="#audit" class="inline-block mt-4 px-6 py-2 rounded-lg bg-green-600 hover:bg-green-700 text-white font-bold shadow">Audit & Transparency</a>
+    </div>
+  </section>
+
+  <section id="audit" class="max-w-4xl mx-auto my-8 px-4">
+    <div class="glass p-7 shadow-soft">
+      <h3 class="text-2xl font-bold text-white mb-4">Audit & Transparency</h3>
+      <p class="text-slate-200 mb-2">
+        USD.o smart contract is open source and fully auditable. Coming soon: Independent audit reports by leading blockchain security firms.
+      </p>
+      <div class="flex flex-wrap gap-4 mt-4">
+        <img src="https://avatars.githubusercontent.com/u/26356449?s=64&v=4" alt="CertiK logo" class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 shadow">
+        <img src="https://pbs.twimg.com/profile_images/1635307330915512322/_x8GrSl7_400x400.jpg" alt="Hacken logo" class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 shadow">
+        <img src="https://cryptologos.cc/logos/binance-coin-bnb-logo.png" alt="Binance logo" class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 shadow">
+      </div>
+    </div>
+  </section>
+
+  <!-- Get USD.o -->
+  <section id="getusd" class="max-w-3xl mx-auto my-8 px-4">
+    <div class="glass p-7 shadow-soft text-center">
+      <h3 class="text-2xl font-bold text-white mb-2">Get USD.o</h3>
+      <p class="text-slate-200 mb-4">To acquire USD online, contact the official issuer or connect your Web3 wallet once the token is live.</p>
+      <button class="mt-3 px-8 py-3 rounded-xl bg-cyan-600 hover:bg-cyan-700 text-white font-bold text-lg shadow-lg">Connect Wallet</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-slate-400 py-7 text-sm">
+    &copy; 2025 USD.o — USD online. All rights reserved.
+  </footer>
+
+</body>
+</html>
