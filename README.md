@@ -132,7 +132,7 @@ contract USDO {
 
 ## Contact & Community
 
-- Website: https://usd-o.io *(example)*
+- Website: https://usd-o.io
 - Email: info@usd-o.io
 - Telegram: @usd_online
 - Twitter/X: @usd_online
